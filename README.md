@@ -1,5 +1,5 @@
 # Layoffs Data Cleaning Project (SQL)
-https://github.com/itsamemario2017/SQL-layoffs-data/commit/56b7fd99e2549aaf2df4bf1f292c181cfe7fb3dc
+
 ## Project Overview
 This project focuses on cleaning and preparing a dataset of global layoffs using SQL followed by exploratory analysis.
 
