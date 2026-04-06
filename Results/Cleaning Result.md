@@ -63,8 +63,29 @@ where row_num>1;``
 
 -- duplicates removed
 -- standardizing data
- -- remove spaces from company column
 
+ -- remove spaces from company column
+``select company, trim(company)
+ from layoffs_staging3;``
+ <img width="211" height="133" alt="image" src="https://github.com/user-attachments/assets/d52b2c2d-1d22-44b5-90c3-10f3a72d9075" />
+ 
+`` update layoffs_staging3
+ set company= trim(company);``
+
+ -- Correcting data
+ 
+-- Changing cryptocurrency to crypto. In industry column it is writtern crypto and crypto currency which means the same. Therefore need to standardize
+``select*
+ from layoffs_staging3
+ where industry like 'Crypto%';``
+ <img width="897" height="147" alt="image" src="https://github.com/user-attachments/assets/077389a1-6f68-4839-8bac-2edb086e463b" />
+
+ ``update layoffs_staging3
+ set industry= 'Crypto'
+ where  industry like 'Crypto%';``
+**<img width="918" height="127" alt="image" src="https://github.com/user-attachments/assets/3f54414a-cb7e-41ef-9477-d310060afe74" />
+
+ -- Removing . from United States
 
 
 
