@@ -74,7 +74,7 @@ where row_num>1;``
 
  -- Correcting data
  
--- Changing cryptocurrency to crypto. In industry column it is writtern crypto and crypto currency which means the same. Therefore need to standardize
+-- Changing cryptocurrency to crypto. In industry column it is written crypto and crypto currency which means the same. Therefore need to standardize
 ``select*
  from layoffs_staging3
  where industry like 'Crypto%';``
