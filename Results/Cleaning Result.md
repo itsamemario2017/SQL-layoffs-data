@@ -135,5 +135,20 @@ str_to_date(`date`, '%m/%d/%Y')
 from layoffs_staging3;``
 <img width="321" height="158" alt="image" src="https://github.com/user-attachments/assets/6b70f379-c00a-4049-813f-a22dea3fb0f3" />
 
+-- handling null and blank values
+-- remove data with no valid exploratory potential having total_laid_off and percentage_laid_off as null
+
+``select*
+from layoffs_staging3
+where total_laid_off is null
+and percentage_laid_off is null ;``
+<img width="922" height="144" alt="Screenshot 2026-04-09 220851" src="https://github.com/user-attachments/assets/8b89cf88-c009-4965-a6e1-69d3fb24ba75" />
+
+-- Deleting the rows having both total_laid_off and percentage_laid_off as null
+``delete
+from layoffs_staging3
+where total_laid_off is null
+and percentage_laid_off is null ;``
+
 
 
