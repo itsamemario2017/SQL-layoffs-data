@@ -117,15 +117,23 @@ str_to_date(`date`, '%m/%d/%Y')
 from layoffs_staging3;``
 <img width="526" height="171" alt="image" src="https://github.com/user-attachments/assets/63a0eb3b-8298-41f6-9638-7e525a9e6edd" />
 
+-- Update the table so that the `date` column values are stored as proper DATE type values
 ``update layoffs_staging3
 set `date`= str_to_date(`date`, '%m/%d/%Y');``
 
+-- Alter the table schema to change the `date` column’s datatype from string (VARCHAR) to DATE
 ``alter table layoffs_staging3
 modify column `date` date;``
 
+-- Verify the updated values in the `date` column
 ``select`date`
 from layoffs_staging3;``
 <img width="465" height="172" alt="image" src="https://github.com/user-attachments/assets/f71f8c60-dd2a-4c71-8d51-50a642f3fbcf" />
+
+``  select `date`,
+str_to_date(`date`, '%m/%d/%Y')
+from layoffs_staging3;``
+<img width="321" height="158" alt="image" src="https://github.com/user-attachments/assets/6b70f379-c00a-4049-813f-a22dea3fb0f3" />
 
 
 
