@@ -150,5 +150,17 @@ from layoffs_staging3
 where total_laid_off is null
 and percentage_laid_off is null ;``
 
+-- Rows deleted 
+``select*
+from layoffs_staging3
+where total_laid_off is null
+and percentage_laid_off is null ;``
+<img width="929" height="177" alt="Screenshot 2026-04-09 230353" src="https://github.com/user-attachments/assets/f05a8263-9d69-4ff3-9e95-c2ad28a43e71" />
+
+-- Checking if '' values exist in both insted of null.
+
+
+
+
 
 
