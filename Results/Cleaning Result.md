@@ -85,7 +85,47 @@ where row_num>1;``
  where  industry like 'Crypto%';``
 **<img width="918" height="127" alt="image" src="https://github.com/user-attachments/assets/3f54414a-cb7e-41ef-9477-d310060afe74" />
 
- -- Removing . from United States
+ -- Removing '.' from United States using trim trailing. (Standardizing Data)
+``select distinct country
+ from layoffs_staging3
+ order by 1;``
+<img width="247" height="142" alt="image" src="https://github.com/user-attachments/assets/ae63efac-106b-4eaa-a100-1f9b104e5745" />
+
+``select distinct country
+ from layoffs_staging3
+ where country like 'United States%';``
+<img width="207" height="61" alt="image" src="https://github.com/user-attachments/assets/e6994964-9344-4c37-ac2c-b3f8b3cbbde8" />
+
+``select distinct country, trim(trailing '.' from  country  )
+ from layoffs_staging3
+ ;``
+ <img width="367" height="150" alt="image" src="https://github.com/user-attachments/assets/5475e73e-446d-49d3-ba0b-ff0787916452" />
+
+ ``update layoffs_staging3
+ set country= trim(trailing '.' from  country)
+ where country like 'United States%';``
+
+ -- Removed '.'
+  ``select distinct country
+ from layoffs_staging3
+ where country like 'United States%';``
+ <img width="228" height="115" alt="Screenshot 2026-04-09 214254" src="https://github.com/user-attachments/assets/e1e0cc62-f7cb-4014-b6a9-88a57dbb4a38" />
+ 
+-- Date formatting from text to date
+``select `date`,
+str_to_date(`date`, '%m/%d/%Y')
+from layoffs_staging3;``
+<img width="526" height="171" alt="image" src="https://github.com/user-attachments/assets/63a0eb3b-8298-41f6-9638-7e525a9e6edd" />
+
+``update layoffs_staging3
+set `date`= str_to_date(`date`, '%m/%d/%Y');``
+
+``alter table layoffs_staging3
+modify column `date` date;``
+
+``select`date`
+from layoffs_staging3;``
+<img width="465" height="172" alt="image" src="https://github.com/user-attachments/assets/f71f8c60-dd2a-4c71-8d51-50a642f3fbcf" />
 
 
 
