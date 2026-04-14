@@ -64,6 +64,10 @@ where row_num>1;``
 -- duplicates removed
 -- standardizing data
 
+ -- remove row_num column as use over
+``alter table layoffs_staging3
+drop column row_num;``
+
  -- remove spaces from company column
 ``select company, trim(company)
  from layoffs_staging3;``
@@ -215,6 +219,9 @@ where company like 'Airbnb%';``
 
 -- only Bally's interactive industry shows null as it has no any entries in the data in which industry data is present.
 <img width="925" height="121" alt="Screenshot 2026-04-14 204225" src="https://github.com/user-attachments/assets/7efbd929-1675-402e-98dd-de41f61d9c7d" />
+
+-- Final cleaned data
+/layoffs_cleaned.csv
 
 
 
