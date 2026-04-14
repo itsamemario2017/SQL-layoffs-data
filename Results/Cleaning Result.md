@@ -221,7 +221,7 @@ where company like 'Airbnb%';``
 <img width="925" height="121" alt="Screenshot 2026-04-14 204225" src="https://github.com/user-attachments/assets/7efbd929-1675-402e-98dd-de41f61d9c7d" />
 
 -- Final cleaned data
-``layoffs_cleaned_data.csv``
+layoffs_cleaned_data.csv
 
 
 
