@@ -158,6 +158,29 @@ and percentage_laid_off is null ;``
 <img width="929" height="177" alt="Screenshot 2026-04-09 230353" src="https://github.com/user-attachments/assets/f05a8263-9d69-4ff3-9e95-c2ad28a43e71" />
 
 -- Checking if ' ' values exist in both instead of null.
+``select*
+from layoffs_staging3
+where total_laid_off= ''
+and percentage_laid_off='' ;``
+<img width="928" height="163" alt="image" src="https://github.com/user-attachments/assets/0265420f-5dfe-4526-a0c7-c01d67a0e1b1" />
+-- no blank ' ' values
+
+-- removing blanks from industry
+``select *
+from layoffs_staging3
+where industry='';``
+<img width="765" height="90" alt="Screenshot 2026-04-14 200038" src="https://github.com/user-attachments/assets/e08b2ae1-1264-49bb-be5e-9e171fafeaa4" />
+
+``SELECT *
+FROM layoffs_staging3
+WHERE industry IS NULL;``
+<img width="832" height="87" alt="image" src="https://github.com/user-attachments/assets/0842273a-a319-42c4-9a8f-e99c54f1f5b4" />
+
+``update layoffs_staging3
+set industry = null
+where industry= '';``
+-- all blanks in industry column changed to Null <img width="935" height="117" alt="image" src="https://github.com/user-attachments/assets/9d669dc0-fe07-4807-89f9-86525b0a71fd" />
+
 
 
 
