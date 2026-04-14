@@ -187,7 +187,34 @@ from layoffs_staging3
 where company like 'Airbnb%';``
 --Like Arbnb has Null in one row and Travel in another, as industry stays the same we try to fill similar nulls like these for other comapnies like Arbnb using self join  <img width="234" height="60" alt="Screenshot 2026-04-14 200758" src="https://github.com/user-attachments/assets/da9b63d7-9520-489e-85a9-1badd3615bd3" />
 
+``select t1.company,t1.industry, t2.company, t2.industry
+from layoffs_staging3 as t1
+join layoffs_staging3 as t2
+on t1.company=t2.company
+where t1.industry is null and t2.industry is not null;``
+--Now we can fill the industry with the following query<img width="515" height="139" alt="Screenshot 2026-04-14 201940" src="https://github.com/user-attachments/assets/2f55e5c0-9411-49e9-99a3-c03f1d1ef75d" />
+``update layoffs_staging3 as t1
+join layoffs_staging3 as t2
+on t1.company=t2.company
+set t1.industry=t2.industry
+where t1.industry is null and t2.industry is not null;``
 
+--Checking if blanks are filled
+``select t1.company,t1.industry, t2.company, t2.industry
+from layoffs_staging3 as t1
+join layoffs_staging3 as t2
+on t1.company=t2.company
+where t1.industry is null and t2.industry is not null;``
+--this indicates the nulls have been filled<img width="931" height="141" alt="Screenshot 2026-04-14 202313" src="https://github.com/user-attachments/assets/d563d3ee-a756-44a8-ae21-50be5bf2fec1" />
+
+--We can check arbnb status with our old query
+``select company, industry
+from layoffs_staging3
+where company like 'Airbnb%';``
+--Therefore Nulls filled in industry column<img width="557" height="82" alt="image" src="https://github.com/user-attachments/assets/b0966be4-736e-489d-86d6-071063ca51dd" />
+
+-- only Bally's interactive industry shows null as it has no any entries in the data in which industry data is present.
+<img width="925" height="121" alt="Screenshot 2026-04-14 204225" src="https://github.com/user-attachments/assets/7efbd929-1675-402e-98dd-de41f61d9c7d" />
 
 
 
