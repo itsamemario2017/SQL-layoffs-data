@@ -181,6 +181,11 @@ set industry = null
 where industry= '';``
 -- all blanks in industry column changed to Null <img width="935" height="117" alt="image" src="https://github.com/user-attachments/assets/9d669dc0-fe07-4807-89f9-86525b0a71fd" />
 
+-- trying to fill null industries if the same company has information about industry but in another row. (Using self Join)
+``select company, industry
+from layoffs_staging3
+where company like 'Airbnb%';``
+--Like Arbnb has Null in one row and Travel in another, as industry stays the same we try to fill similar nulls like these for other comapnies like Arbnb using self join  <img width="234" height="60" alt="Screenshot 2026-04-14 200758" src="https://github.com/user-attachments/assets/da9b63d7-9520-489e-85a9-1badd3615bd3" />
 
 
 
