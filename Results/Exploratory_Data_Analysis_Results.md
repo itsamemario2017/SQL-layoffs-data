@@ -108,7 +108,7 @@ select*
 from company_year_rank
 where ranking <=5;` -- 2020 Uber had the most layoffs, 2021 Bytedance , 2022 Meta, 2023 Google had the most layoffs.
 <img width="1350" height="262" alt="Screenshot 2026-10-15 192246" src="https://github.com/user-attachments/assets/394c0a97-b7ef-46ac-9fa9-258c94486d59" />
-<img width="1350" height="262" alt="Screenshot 2026-10-15 192246" src="https://github.com/user-attachments/assets/9aeae536-4eba-49c8-a008-7c680ad97362" />
+<img width="1355" height="291" alt="Screenshot 2026-10-15 192320" src="https://github.com/user-attachments/assets/9557d3bc-9a01-430e-94ff-ca7d987a300c" />
 <img width="1391" height="257" alt="image" src="https://github.com/user-attachments/assets/50aa2e71-59d3-4dd5-90aa-d39645f996ad" />
 
 
