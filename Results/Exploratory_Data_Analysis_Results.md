@@ -77,6 +77,48 @@ from wow;`
 <img width="934" height="261" alt="Screenshot 2026-05-29 231656" src="https://github.com/user-attachments/assets/4da85998-4ce8-49f2-8a13-84a62fb8c048" />
 <img width="930" height="255" alt="Screenshot 2026-05-29 231738" src="https://github.com/user-attachments/assets/be850618-9345-41b8-b85c-db7ee32a3a96" /> -- therefore total 383159 layoffs in the dataset
 
+-- Top 5 layoffs by companies per year.
+
+-- Checking total laid off by each company (Amazon has the highest in the dataset)
+`select company, sum(total_laid_off)
+from layoffs_staging3
+group by company
+order by 2 desc;`
+<img width="638" height="178" alt="image" src="https://github.com/user-attachments/assets/e934aa8a-b794-48a1-bcd2-b62f9846b3ba" />
+
+-- Checking total laid off by companies per year (Google in 2023 laid off highest)
+`select company,year(`date`) as date_year, sum(total_laid_off)
+from layoffs_staging3
+group by company,year(`date`)
+order by 3 desc ;`
+<img width="1265" height="262" alt="image" src="https://github.com/user-attachments/assets/3aa18d56-3769-4eea-846e-ba41f5004168" />
+
+-- Finally to check top 5 layoffs by companies per year (Using dense ranking) 
+`with company_year (company,years, total_laid_off) as
+(
+select company,year(`date`) as date_year, sum(total_laid_off)
+from layoffs_staging3
+group by company,year(`date`)
+) ,company_year_rank as
+(select*, dense_rank() over(partition by years order by total_laid_off desc) as ranking
+from company_year
+where years is not null and total_laid_off is not null
+)
+select* 
+from company_year_rank
+where ranking <=5;` -- 2020 Uber had the most layoffs, 2021 Bytedance , 2022 Meta, 2023 Google had the most layoffs.
+<img width="1350" height="262" alt="Screenshot 2026-10-15 192246" src="https://github.com/user-attachments/assets/394c0a97-b7ef-46ac-9fa9-258c94486d59" />
+<img width="1350" height="262" alt="Screenshot 2026-10-15 192246" src="https://github.com/user-attachments/assets/9aeae536-4eba-49c8-a008-7c680ad97362" />
+<img width="1391" height="257" alt="image" src="https://github.com/user-attachments/assets/50aa2e71-59d3-4dd5-90aa-d39645f996ad" />
+
+
+
+
+
+
+
+
+
 
 
 
