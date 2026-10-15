@@ -14,7 +14,11 @@ This project focuses on cleaning and preparing a dataset of global layoffs using
   
 ## SQL Queries
 - [Data Cleaning](./sqllayoffprojectcleaning.sql)
+- [Exploratory Data Analysis](./Exploratory_data_analysis.sql)
 
+## [Results](Results/.)
+- 
+  
 
 
 ## Tools Used
