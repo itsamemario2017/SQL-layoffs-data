@@ -13,7 +13,7 @@ This project focuses on cleaning and preparing a dataset of global layoffs using
 - Joins
   
 ## SQL Queries
-- Data Cleaning 
+- Data Cleaning (sqllayoffprojectcleaning.sql) 
 
 
 ## Tools Used
