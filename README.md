@@ -21,7 +21,3 @@ This project focuses on cleaning and preparing a dataset of global layoffs using
 - [Cleaned Dataset](./layoffs_cleaned_data.csv)
 - [Exploratory Data Analysis](Results/Exploratory_Data_Analysis_Results.md)
   
-## Tools Used
-- MySQL
-- SQL Window Functions
-- GitHub
