@@ -1,7 +1,7 @@
 # Layoffs Data Cleaning Project (SQL)
 
 ## Project Overview
-This project focuses on cleaning and preparing a dataset of global layoffs using SQL followed by exploratory analysis.
+This project focuses on cleaning and preparing a [dataset of global layoffs](./layoffs.csv) using SQL followed by exploratory analysis.
 
 ## Skills Demonstrated
 - Data Cleaning
